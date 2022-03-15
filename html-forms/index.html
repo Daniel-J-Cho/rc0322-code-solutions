@@ -5,41 +5,43 @@
 </head>
 <body>
   <h1>Coding Form!</h1>
-  <form>
-    <label for="email">Email</label>
-    <br>
+  <form action="http://www.example.com/coding-reasons.php" method="get">
+    <div>
+      <label for="email">Email</label>
+    </div>
     <input id="email" type="text" name="email">
-    <br>
-    <label for="reasons">Why is coding cool?</label>
-    <br>
+    <div>
+      <label for="reasons">Why is coding cool?</label>
+    </div>
     <select id="reasons" name="reasons">
       <option value="first">Select an option</option>
       <option value="second">Because it's interesting</option>
       <option value="third">Because it's fun</option>
       <option value="fourth">Because it's powerful</option>
     </select>
-    <br>
-    <br>
-    <label for="radiobuttons">Favorite Language (choose one)</label>
-    <br>
-    <br>
+
+    <div>
+      <p><label for="radiobuttons">Favorite Language (choose one)</label></p>
+    </div>
+
     <input id="radiobuttons" type="radio" name="languages" value="HTML" />
     <label for="radiobuttons">HTML</label>
     <input id="radiobuttons" type="radio" name="languages" value="CSS" />
     <label for="radiobuttons">CSS</label>
     <input id="radiobuttons" type="radio" name="languages" value="JavaScript" />
     <label for="radiobuttons">JavaScript</label>
+
+
     <p> Would you like to sign up for more information?</p>
-
-
     <input id="signup" type="checkbox" name="signup" value="signup" />
     <label for="signup">Sign me up!</label>
-    <br>
-    <label for="comments">Comments</label>
-    <br>
+    <div>
+      <label for="comments">Comments</label>
+    </div>
     <textarea id="comments" name="comments" cols="20" rows="4"></textarea>
-    <br>
-    <input type="submit" name="submit" value="submit">
+    <div>
+      <input type="submit" name="submit" value="submit">
+    </div>
   </form>
 </body>
 </html>
