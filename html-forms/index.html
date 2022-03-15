@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML forms</title>
+</head>
+<body>
+  <h1>Coding Form!</h1>
+  <form action="http://www.example.com/coding-reasons.php" method="get">
+    <div>
+      <label for="email">Email</label>
+    </div>
+    <input id="email" type="text" name="email">
+    <div>
+      <label for="reasons">Why is coding cool?</label>
+    </div>
+    <select id="reasons" name="reasons">
+      <option value="first">Select an option</option>
+      <option value="second">Because it's interesting</option>
+      <option value="third">Because it's fun</option>
+      <option value="fourth">Because it's powerful</option>
+    </select>
+
+    <p>Favorite Language (choose one)</p>
+
+    <input id="radiobuttons1" type="radio" name="languages" value="HTML" />
+    <label for="radiobuttons1">HTML</label>
+    <input id="radiobuttons2" type="radio" name="languages" value="CSS" />
+    <label for="radiobuttons2">CSS</label>
+    <input id="radiobuttons3" type="radio" name="languages" value="JavaScript" />
+    <label for="radiobuttons3">JavaScript</label>
+
+
+    <p> Would you like to sign up for more information?</p>
+    <input id="signup" type="checkbox" name="signup" value="signup" />
+    <label for="signup">Sign me up!</label>
+    <div>
+      <label for="comments">Comments</label>
+    </div>
+    <textarea id="comments" name="comments" cols="20" rows="4"></textarea>
+    <div>
+      <input type="submit" name="submit" value="submit">
+    </div>
+  </form>
+</body>
+</html>
