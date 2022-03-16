@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Challenge - Brochure Form</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Learn More</h2>
+  <form action="http://example.com/learnmore.php">
+    <div class="label">
+      <label for="email">
+        Company email
+      </label>
+    </div>
+    <div class="input">
+      <input type="email" id="email" placeholder="sally@company.co">
+    </div> <!--email-->
+
+    <div class="label">
+      <label for="name">
+        Name
+      </label>
+    </div>
+    <div class="input">
+      <input type="text" id="name" placeholder="Sally Smith">
+    </div> <!--name-->
+
+    <div class="label">
+      <label for="location">
+        Where are you hiring?
+      </label>
+    </div>
+    <div class="input">
+      <input type="text" id="location" placeholder="City, Country">
+    </div><!--location-->
+
+    <div class="label">
+      <label for="numberOfEng">
+        How many engineers are you hiring in the next 6 months?
+      </label>
+    </div>
+    <div class="select">
+      <select name="num" id="numberofEng">
+        <option value="1-2">1-2 Engineers</option>
+        <option value="3-4">3-4 Engineers</option>
+        <option value="5-6">5-6 Engineers</option>
+        <option value="100">100 Engineers</option>
+      </select>
+    </div><!--number of engineers drop-down box-->
+
+    <div class="submit">
+      <input type="submit" name="submit" value="SUBMIT" class="submit">
+    </div> <!--submit button-->
+  </form>
+</body>
+</html>
