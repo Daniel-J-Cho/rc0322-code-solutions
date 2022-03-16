@@ -2,7 +2,7 @@ h2 {
   text-align: center;
   font-family: "Brandon Grotesque", sans-serif;
   text-transform: uppercase;
-  color: rgb(145 197 68);
+  color: rgb(194 152 61);
   letter-spacing: 0.12em;
 }
 
@@ -41,6 +41,7 @@ input {
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 8px;
+  font-size: 11px;
 }
 
 select {
@@ -49,6 +50,7 @@ select {
   border: 1px solid lightgrey;
   border-radius: 5px;
   background-color: rgb(240 230 230);
+  font-size: 11px;
 }
 
 input.submit {
@@ -57,4 +59,5 @@ input.submit {
   background-color: rgb(17 167 17);
   color: white;
   border-radius: 20px;
+  font-size: 11px;
 }
