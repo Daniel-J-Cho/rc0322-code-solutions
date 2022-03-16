@@ -2,7 +2,7 @@ h2 {
   text-align: center;
   font-family: "Brandon Grotesque", sans-serif;
   text-transform: uppercase;
-  color: rgb(194 152 61);
+  color: rgb(184 144 58);
   letter-spacing: 0.12em;
 }
 
@@ -37,27 +37,24 @@ label {
 
 input {
   width: 470px;
-  height: 30px;
+  height: 35px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 8px;
-  font-size: 11px;
 }
 
 select {
   width: 470px;
-  height: 30px;
+  height: 35px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   background-color: rgb(240 230 230);
-  font-size: 11px;
 }
 
 input.submit {
   width: 80px;
-  height: 30px;
+  height: 35px;
   background-color: rgb(17 167 17);
   color: white;
   border-radius: 20px;
-  font-size: 11px;
 }
