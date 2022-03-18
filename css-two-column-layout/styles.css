@@ -1,0 +1,72 @@
+.container {
+  max-width: 800px;
+  font-family: Karla, sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+h1,
+h3 {
+  text-transform: uppercase;
+}
+
+h1 {
+  letter-spacing: 4px;
+}
+
+h3 {
+  font-size: 0.8em;
+  margin-top: 40px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.first-pline-height {
+  line-height: 2;
+}
+
+.first-p-padding {
+  padding: 0 130px;
+}
+
+.first-p-text-center {
+  text-align: center;
+}
+
+.column-10-percent {
+  flex-basis: 10%;
+}
+
+.column-40-percent {
+  flex-basis: 40%;
+}
+
+p {
+  color: rgb(102 98 98);
+  font-size: 0.8em;
+  line-height: 1.7;
+}
+
+button {
+  border: 1px solid green;
+  background-color: white;
+  color: green;
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+  font-size: x-small;
+  letter-spacing: 1px;
+}
+
+.row,
+justify-center {
+  margin-top: 40px;
+}
