@@ -54,15 +54,15 @@ function doubleAll(numbers) {
 function getKeys(object) {
   var keys = [];
   for (const key in object) {
-    keys.push(object[key]);
+    keys.push(`${key}`);
   }
   return keys;
 }
 
 function getValues(object) {
   var values = [];
-  for (const key in object) {
-    values.push(object[key]);
+  for (const value in object) {
+    values.push(object[value]);
   }
   return values;
 }
