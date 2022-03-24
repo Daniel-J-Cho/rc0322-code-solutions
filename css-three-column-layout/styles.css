@@ -27,7 +27,7 @@ h3 {
 .column-one-third {
   flex-direction: column;
   flex-basis: calc(100% / 3);
-  margin-left: 120px;
+  padding: 0 60px;
   justify-content: center;
 }
 
