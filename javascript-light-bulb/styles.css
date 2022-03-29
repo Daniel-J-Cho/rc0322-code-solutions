@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 900px;
+  height: 800px;
+  background-color: black;
+}
+
+.container-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 900px;
+  height: 800px;
+  background-color: lightyellow;
+}
+
+.off-button {
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 50%;
+  background: rgb(34 56 56);
+}
+
+.on-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: yellow;
+  border: lightyellow;
+  box-shadow: 15px 15px 15px 15px yellow;
+}
