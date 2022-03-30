@@ -6,14 +6,14 @@ function typeMatch(event) {
   if (counter === $spanElements.length || counter > $spanElements.length) {
     return false;
   } else if (keyCharacter === $spanElements[counter].textContent) {
-    $spanElements[counter].className = 'green-char'; // make this character green;
-    counter++;// increment
+    $spanElements[counter].className = 'green-char';
+    counter++;
     if (counter === $spanElements.length) {
       return false;
     }
-    $spanElements[counter].className = 'underline';// make this character with an underline
-  } else if (keyCharacter !== $spanElements[counter].textContent) { // else statement
-    $spanElements[counter].className = 'red-char';// set character to red
+    $spanElements[counter].className = 'underline';
+  } else if (keyCharacter !== $spanElements[counter].textContent) {
+    $spanElements[counter].className = 'red-char';
   }
 }
 
