@@ -2,11 +2,13 @@
 
 function omit(source, keys) {
   var newObj = {};
-  for (const key in source) {
-    if (keys.includes(key)) {
-      return false;
-    } else {
-      newObj[key] = source[key];
+  for (let i = 0; i < keys.length; i++) {
+    for (const key in source) {
+      if (keys[i] === source[key]) {
+        continue;
+      } else {
+        newObj[key] = source[key];
+      }
     }
   }
   return newObj;
