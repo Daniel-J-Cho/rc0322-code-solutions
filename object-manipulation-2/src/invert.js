@@ -6,7 +6,5 @@ function invert(source) {
     newObj[source[key]] = key;
   }
   return newObj;
-}
 
-// swapping keys and values of objects
-//
+}
