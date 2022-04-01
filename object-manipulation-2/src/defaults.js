@@ -2,6 +2,8 @@
 
 function defaults(target, source) {
   for (var key in source) {
-    target[key] = source[key];
+    if (!(key in target)) {
+      target[key] = source[key];
+    }
   }
 }
