@@ -12,9 +12,9 @@ function zip(first, second) {
       subArr = [];
     }
   } else if (first.length > second.length) {
-    for (let j = 0; j < second.length; j++) {
-      subArr.push(first[j]);
-      subArr.push(second[j]);
+    for (let i = 0; i < second.length; i++) {
+      subArr.push(first[i]);
+      subArr.push(second[i]);
       newArr.push(subArr);
       subArr = [];
     }
@@ -31,6 +31,16 @@ function zip(first, second) {
 }
 
 // Create new array and assign it to a
-// variable.
-// Use if, else if statements to find out
-// which array is shorter.
+// variable.  Create a sub-array and assign
+// it to a variable.
+// Use if, else if, else statements to test
+// whether 'first' or 'second' array is shorter
+// Within each condition, set shorter array as
+// the length to test against in the condition
+// expression of the associated for loop.
+// Push 'i' at 'first' array onto sub-array.
+// Push 'i' at 'second' array onto sub-array.
+// Push resulting sub-array onto new array.
+// Reset sub-array to empty array.
+// After if, else if, and else statements,
+// return new array.
