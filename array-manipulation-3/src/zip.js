@@ -1,21 +1,33 @@
 /* exported zip */
 
 function zip(first, second) {
+  var newArr = [];
+  var subArr = [];
 
-  // var newArr = [];
-  // if (first.length < second.length) {
-  //   for (let i = 0; i < first.length; i++) {
+  if (first.length < second.length) {
+    for (let i = 0; i < first.length; i++) {
+      subArr.push(first[i]);
+      subArr.push(second[i]);
+      newArr.push(subArr);
+      subArr = [];
+    }
+  } else if (first.length > second.length) {
+    for (let j = 0; j < second.length; j++) {
+      subArr.push(first[j]);
+      subArr.push(second[j]);
+      newArr.push(subArr);
+      subArr = [];
+    }
+  } else {
+    for (let i = 0; i < first.length; i++) {
+      subArr.push(first[i]);
+      subArr.push(second[i]);
+      newArr.push(subArr);
+      subArr = [];
+    }
+  }
 
-  //   }
-  // } else if (first.length > second.length) {
-  //   for (let j = 0; j < second.length; j++) {
-  //     second.push(first[j]);
-  //   }
-  // } else if (first.length === second.length) {
-  //   for (let k = 0; k < first.length; k++) {
-  //     first.push(second[k]);
-  //   }
-  // }
+  return newArr;
 }
 
 // Create new array and assign it to a
