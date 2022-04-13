@@ -1,0 +1,60 @@
+.container {
+  max-width: 1000px;
+  max-height: 800px;
+  margin: 0 auto;
+  border: 3px solid black;
+}
+
+.row {
+  display: flex;
+}
+
+.column-third {
+  width: calc(100% / 3);
+  position: relative;
+}
+
+.circle-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.img-div {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 333px;
+  height: 333px;
+}
+
+.fas.fa-angle-left {
+  position: absolute;
+  top: 45%;
+  left: 12%;
+  font-size: 4rem;
+  color: black;
+}
+
+.fas.fa-angle-right {
+  position: absolute;
+  top: 45%;
+  right: 12%;
+  font-size: 4rem;
+  color: black;
+}
+
+.fas.fa-circle {
+  color: black;
+}
+
+.far.fa-circle {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
