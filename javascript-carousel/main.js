@@ -12,84 +12,79 @@ var $circleFour = document.querySelector('.circle-four');
 var $circleFive = document.querySelector('.circle-five');
 // var $circles = document.querySelectorAll('.circle');
 
+function pokeImg025() {
+  $pokeImg.setAttribute('src', 'images/025.png');
+  $circleOne.className = 'fas fa-circle';
+  $circleTwo.className = 'far fa-circle';
+  $circleThree.className = 'far fa-circle';
+  $circleFour.className = 'far fa-circle';
+  $circleFive.className = 'far fa-circle';
+}
+
+function pokeImg039() {
+  $pokeImg.setAttribute('src', 'images/039.png');
+  $circleOne.className = 'far fa-circle';
+  $circleTwo.className = 'fas fa-circle';
+  $circleThree.className = 'far fa-circle';
+  $circleFour.className = 'far fa-circle';
+  $circleFive.className = 'far fa-circle';
+}
+
+function pokeImg007() {
+  $pokeImg.setAttribute('src', 'images/007.png');
+  $circleOne.className = 'far fa-circle';
+  $circleTwo.className = 'far fa-circle';
+  $circleThree.className = 'fas fa-circle';
+  $circleFour.className = 'far fa-circle';
+  $circleFive.className = 'far fa-circle';
+}
+
+function pokeImg004() {
+  $pokeImg.setAttribute('src', 'images/004.png');
+  $circleOne.className = 'far fa-circle';
+  $circleTwo.className = 'far fa-circle';
+  $circleThree.className = 'far fa-circle';
+  $circleFour.className = 'fas fa-circle';
+  $circleFive.className = 'far fa-circle';
+}
+
+function pokeImg001() {
+  $pokeImg.setAttribute('src', 'images/001.png');
+  $circleOne.className = 'far fa-circle';
+  $circleTwo.className = 'far fa-circle';
+  $circleThree.className = 'far fa-circle';
+  $circleFour.className = 'far fa-circle';
+  $circleFive.className = 'fas fa-circle';
+}
+
 var intervalID = setInterval(switchImg, 3000);
 
 function switchImg() {
   if ($pokeImg.getAttribute('src') === 'images/025.png') {
-    $pokeImg.setAttribute('src', 'images/039.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'fas fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg039();
   } else if ($pokeImg.getAttribute('src') === 'images/039.png') {
-    $pokeImg.setAttribute('src', 'images/007.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'fas fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg007();
   } else if ($pokeImg.getAttribute('src') === 'images/007.png') {
-    $pokeImg.setAttribute('src', 'images/004.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'fas fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg004();
   } else if ($pokeImg.getAttribute('src') === 'images/004.png') {
-    $pokeImg.setAttribute('src', 'images/001.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'fas fa-circle';
+    pokeImg001();
   } else if ($pokeImg.getAttribute('src') === 'images/001.png') {
-    $pokeImg.setAttribute('src', 'images/025.png');
-    $circleOne.className = 'fas fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg025();
   }
 }
 
 $rightArrow.addEventListener('click', function (event) {
   clearInterval(intervalID);
   if ($pokeImg.getAttribute('src') === 'images/025.png') {
-    $pokeImg.setAttribute('src', 'images/039.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'fas fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg039();
   } else if ($pokeImg.getAttribute('src') === 'images/039.png') {
-    $pokeImg.setAttribute('src', 'images/007.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'fas fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg007();
   } else if ($pokeImg.getAttribute('src') === 'images/007.png') {
-    $pokeImg.setAttribute('src', 'images/004.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'fas fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg004();
   } else if ($pokeImg.getAttribute('src') === 'images/004.png') {
-    $pokeImg.setAttribute('src', 'images/001.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'fas fa-circle';
+    pokeImg001();
   } else if ($pokeImg.getAttribute('src') === 'images/001.png') {
-    $pokeImg.setAttribute('src', 'images/025.png');
-    $circleOne.className = 'fas fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg025();
   }
   intervalID = setInterval(switchImg, 3000);
 });
@@ -97,40 +92,15 @@ $rightArrow.addEventListener('click', function (event) {
 $leftArrow.addEventListener('click', function (event) {
   clearInterval(intervalID);
   if ($pokeImg.getAttribute('src') === 'images/025.png') {
-    $pokeImg.setAttribute('src', 'images/001.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'fas fa-circle';
+    pokeImg001();
   } else if ($pokeImg.getAttribute('src') === 'images/001.png') {
-    $pokeImg.setAttribute('src', 'images/004.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'fas fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg004();
   } else if ($pokeImg.getAttribute('src') === 'images/004.png') {
-    $pokeImg.setAttribute('src', 'images/007.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'fas fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg007();
   } else if ($pokeImg.getAttribute('src') === 'images/007.png') {
-    $pokeImg.setAttribute('src', 'images/039.png');
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'fas fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg039();
   } else if ($pokeImg.getAttribute('src') === 'images/039.png') {
-    $pokeImg.setAttribute('src', 'images/025.png');
-    $circleOne.className = 'fas fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
+    pokeImg025();
   }
   intervalID = setInterval(switchImg, 3000);
 });
@@ -146,40 +116,15 @@ $circIconContainer.addEventListener('click', function (event) {
   //     }
   //   });
   if (event.target === $circleOne) {
-    $circleOne.className = 'fas fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
-    $pokeImg.setAttribute('src', 'images/025.png');
+    pokeImg025();
   } else if (event.target === $circleTwo) {
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'fas fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
-    $pokeImg.setAttribute('src', 'images/039.png');
+    pokeImg039();
   } else if (event.target === $circleThree) {
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'fas fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'far fa-circle';
-    $pokeImg.setAttribute('src', 'images/007.png');
+    pokeImg007();
   } else if (event.target === $circleFour) {
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'fas fa-circle';
-    $circleFive.className = 'far fa-circle';
-    $pokeImg.setAttribute('src', 'images/004.png');
+    pokeImg004();
   } else if (event.target === $circleFive) {
-    $circleOne.className = 'far fa-circle';
-    $circleTwo.className = 'far fa-circle';
-    $circleThree.className = 'far fa-circle';
-    $circleFour.className = 'far fa-circle';
-    $circleFive.className = 'fas fa-circle';
-    $pokeImg.setAttribute('src', 'images/001.png');
+    pokeImg001();
   }
   intervalID = setInterval(switchImg, 3000);
 });
