@@ -3,9 +3,7 @@ const app = express();
 
 let nextId = 1;
 
-const grades = {
-  id: 1
-};
+const grades = {};
 
 app.get('/api/grades', (req, res) => {
   const gradesArr = [];
