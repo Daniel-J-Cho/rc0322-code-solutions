@@ -6,5 +6,4 @@ function CustomButton(props) {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const element = CustomButton();
-root.render(element);
+root.render(<CustomButton />);
