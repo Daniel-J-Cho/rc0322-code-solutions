@@ -1,0 +1,40 @@
+.btn {
+  margin: 5rem;
+  width: 5rem;
+  height: 2rem;
+}
+
+.btn-grey {
+  background-color: grey;
+  color: black;
+}
+
+.btn-dark-blue {
+  background-color: darkblue;
+  color: white;
+}
+
+.btn-purple {
+  background-color: purple;
+  color: white;
+}
+
+.btn-pink {
+  background-color: rgb(213 125 139);
+  color: white;
+}
+
+.btn-orange {
+  background-color: orange;
+  color: black;
+}
+
+.btn-yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.btn-white {
+  background-color: white;
+  color: black;
+}
