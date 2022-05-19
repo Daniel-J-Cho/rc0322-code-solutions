@@ -1,0 +1,36 @@
+.tgl-off {
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 35px;
+  position: relative;
+}
+
+.tgl-on {
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 35px;
+  position: relative;
+  background-color: green;
+}
+
+.circ-off {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50px;
+  position: absolute;
+  left: 6px;
+}
+
+.circ-on {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50px;
+  position: absolute;
+  left: 30px;
+}
+
+span {
+  margin-left: 15px;
+}
