@@ -1,13 +1,13 @@
 /* exported oddOrEven */
 
 function oddOrEven(numbers) {
-  var oddEvenArray = [];
+  var oddEvenArrayy = [];
   for (let i = 0; i < numbers.length; i++) {
     if ((numbers[i] % 2) === 0) {
-      oddEvenArray.push('even');
+      oddEvenArrayy.push('even');
     } else {
-      oddEvenArray.push('odd');
+      oddEvenArrayy.push('odd');
     }
   }
-  return oddEvenArray;
+  return oddEvenArrayy;
 }
