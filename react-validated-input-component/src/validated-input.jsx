@@ -1,0 +1,41 @@
+import React from 'react';
+
+class ValidatedInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { password: '', errorMsg: '' };
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    // this.passwordLength = this.passwordLength.bind(this);
+  }
+
+  handlePasswordChange(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  // passwordLength() {
+  // }
+
+  render() {
+    let icon;
+    let errMsg;
+    if (this.state.password.length === 0) {
+      errMsg = <p>A password is required.</p>;
+      icon = <i className="fa-solid fa-xmark"></i>;
+    } else if (this.state.password.length < 8) {
+      errMsg = <p>Your password is too short.</p>;
+      icon = <i className="fa-solid fa-xmark"></i>;
+    } else {
+      icon = <i className="fa-solid fa-check"></i>;
+    }
+    return (
+      <div className="container">
+        <p className="password">Password</p>
+        <input type="password" value={this.state.password} onChange={this.handlePasswordChange}></input>
+        <a>{icon}</a>
+        <p className="error">{errMsg}</p>
+      </div>
+    );
+  }
+}
+
+export default ValidatedInput;
