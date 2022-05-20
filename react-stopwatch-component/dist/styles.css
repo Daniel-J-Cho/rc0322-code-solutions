@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+}
+
+.fa-solid.fa-play {
+  position: absolute;
+  top: 270px;
+  left: 215px;
+  font-size: 2rem;
+}
+
+.fa-solid.fa-pause {
+  position: absolute;
+  top: 270px;
+  left: 215px;
+  font-size: 2rem;
+}
+
+.circle {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 150px;
+  border: 2px solid black;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 130px;
+}
+
+p {
+  position: absolute;
+  top: 103px;
+  left: 211px;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
