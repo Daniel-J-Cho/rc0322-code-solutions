@@ -5,15 +5,11 @@ class ValidatedInput extends React.Component {
     super(props);
     this.state = { password: '', errorMsg: '' };
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    // this.passwordLength = this.passwordLength.bind(this);
   }
 
   handlePasswordChange(event) {
     this.setState({ password: event.target.value });
   }
-
-  // passwordLength() {
-  // }
 
   render() {
     let icon;
