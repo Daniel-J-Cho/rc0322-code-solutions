@@ -25,10 +25,10 @@ class ValidatedInput extends React.Component {
     }
     return (
       <div className="container">
-        <p className="password">Password</p>
+        <label className="password">Password</label>
         <input type="password" value={this.state.password} onChange={this.handlePasswordChange}></input>
         <a>{icon}</a>
-        <p className="error">{errMsg}</p>
+        <label className="error">{errMsg}</label>
       </div>
     );
   }
