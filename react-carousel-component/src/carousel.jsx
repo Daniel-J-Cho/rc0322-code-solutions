@@ -5,8 +5,7 @@ class Carousel extends React.Component {
     super(props);
     this.state = { activeIndex: 0 };
     this.revolver = this.revolver.bind(this);
-    this.counter = this.counter.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.nextImg = this.nextImg.bind(this);
     this.prevImg = this.prevImg.bind(this);
   }
 
@@ -14,7 +13,7 @@ class Carousel extends React.Component {
     this.intervalId = setInterval(this.counter, 3000);
   }
 
-  counter() {
+  nextImg() {
     this.setState({ activeIndex: this.state.activeIndex + 1 });
     if (this.state.activeIndex === 4) {
       this.setState({ activeIndex: 0 });
@@ -70,7 +69,7 @@ class Carousel extends React.Component {
             </div>
           </div>
           <div className="col-third">
-            <a onClick={this.counter} href="#">
+            <a onClick={this.nextImg} href="#">
               <i className="fa-solid fa-angle-right"></i>
             </a>
           </div>
