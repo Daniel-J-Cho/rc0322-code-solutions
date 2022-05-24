@@ -3,7 +3,6 @@ const app = express();
 const path = require('node:path');
 
 const absPath = path.join(__dirname, '/public');
-console.log('absolute path:', absPath);
 
 const stat = express.static(absPath);
 
