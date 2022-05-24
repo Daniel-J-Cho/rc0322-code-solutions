@@ -14,7 +14,7 @@ class Carousel extends React.Component {
   }
 
   nextImg() {
-    if (this.state.activeIndex === this.props.images[this.props.images.length - 1]) {
+    if (this.state.activeIndex === (this.props.images.length - 1)) {
       this.setState({ activeIndex: 0 });
     }
     this.setState({ activeIndex: this.state.activeIndex + 1 });
@@ -22,7 +22,7 @@ class Carousel extends React.Component {
 
   prevImg() {
     if (this.state.activeIndex <= 0) {
-      this.setState({ activeIndex: this.props.images[this.props.images.length - 1] });
+      this.setState({ activeIndex: (this.props.images.length - 1) });
     }
     this.setState({ activeIndex: this.state.activeIndex - 1 });
   }
