@@ -10,21 +10,21 @@ class Carousel extends React.Component {
   }
 
   revolver() {
-    this.intervalId = setInterval(this.counter, 3000);
+    this.intervalId = setInterval(this.nextImg, 3000);
   }
 
   nextImg() {
-    if (this.state.activeIndex === (this.props.images.length - 1)) {
+    this.setState({ activeIndex: this.state.activeIndex + 1 });
+    if (this.state.activeIndex === this.props.images.length - 1) {
       this.setState({ activeIndex: 0 });
     }
-    this.setState({ activeIndex: this.state.activeIndex + 1 });
   }
 
   prevImg() {
-    if (this.state.activeIndex <= 0) {
-      this.setState({ activeIndex: (this.props.images.length - 1) });
-    }
     this.setState({ activeIndex: this.state.activeIndex - 1 });
+    if (this.state.activeIndex <= 0) {
+      this.setState({ activeIndex: this.props.images.length - 1 });
+    }
   }
 
   componentDidMount() {
