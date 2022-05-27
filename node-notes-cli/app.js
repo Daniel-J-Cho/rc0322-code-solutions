@@ -16,7 +16,9 @@ if (operation === 'read') {
     if (err) throw err;
   });
 } else if (operation === 'update') {
-  data.notes[str] = note;
+  if (str in data.notes) {
+    data.notes[str] = note;
+  }
   const stringified = JSON.stringify(data, null, 2);
   fs.writeFile('./data.json', stringified, 'utf8', err => {
     if (err) throw err;
