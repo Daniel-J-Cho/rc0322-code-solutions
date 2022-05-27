@@ -49,10 +49,12 @@ class Stopwatch extends React.Component {
       btn = <i className="fa-solid fa-pause"></i>;
     }
     return (
-      <div className='container'>
-        <button onClick={this.reset} className='circle'></button>
-        <p>{this.state.counter}</p>
-        <a onClick={this.handleClick}>{btn}</a>
+      <div>
+        <div className="container">
+          <button onClick={this.reset} className='circle'></button>
+          <p>{this.state.counter}</p>
+          <a onClick={this.handleClick}>{btn}</a>
+        </div>
       </div>
     );
   }
