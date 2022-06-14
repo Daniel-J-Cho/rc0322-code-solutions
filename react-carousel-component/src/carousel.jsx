@@ -14,17 +14,19 @@ class Carousel extends React.Component {
   }
 
   nextImg() {
-    this.setState({ activeIndex: this.state.activeIndex + 1 });
-    if (this.state.activeIndex === this.props.images.length - 1) {
-      this.setState({ activeIndex: 0 });
+    let activeIndex = this.state.activeIndex + 1;
+    if (activeIndex >= this.props.images.length - 1) {
+      activeIndex = 0;
     }
+    this.setState({ activeIndex: activeIndex });
   }
 
   prevImg() {
-    this.setState({ activeIndex: this.state.activeIndex - 1 });
-    if (this.state.activeIndex <= 0) {
-      this.setState({ activeIndex: this.props.images.length - 1 });
+    let activeIndex = this.state.activeIndex - 1;
+    if (activeIndex < 0) {
+      activeIndex = this.props.images.length - 1;
     }
+    this.setState({ activeIndex: activeIndex });
   }
 
   componentDidMount() {
