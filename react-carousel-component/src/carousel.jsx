@@ -15,7 +15,7 @@ class Carousel extends React.Component {
 
   nextImg() {
     let activeIndex = this.state.activeIndex + 1;
-    if (activeIndex >= this.props.images.length - 1) {
+    if (activeIndex > this.props.images.length - 1) {
       activeIndex = 0;
     }
     this.setState({ activeIndex: activeIndex });
@@ -49,7 +49,17 @@ class Carousel extends React.Component {
               <img src={currentImg.imgUrl} alt="Pokemon-image"></img>
             </div>
             <div className="circ-row">
-              <a href="#">
+              {this.props.images.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <a href="#" >
+                      <i className={`${this.state.activeIndex === item.key ? 'fas fa-circle' : 'far fa-circle'}`}></i>
+                    </a>
+                    <span>&nbsp;</span>
+                  </div>
+                );
+              })}
+              {/* <a href="#">
                 <i className={`${this.state.activeIndex === 0 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
               </a>
               <span>&nbsp;</span>
@@ -67,7 +77,7 @@ class Carousel extends React.Component {
               <span>&nbsp;</span>
               <a href="#">
                 <i className={`${this.state.activeIndex === 4 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-third">
