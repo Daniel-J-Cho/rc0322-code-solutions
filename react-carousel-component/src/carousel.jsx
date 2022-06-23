@@ -59,25 +59,6 @@ class Carousel extends React.Component {
                   </div>
                 );
               })}
-              {/* <a href="#">
-                <i className={`${this.state.activeIndex === 0 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a>
-              <span>&nbsp;</span>
-              <a href="#">
-                <i className={`${this.state.activeIndex === 1 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a>
-              <span>&nbsp;</span>
-              <a href="#">
-                <i className={`${this.state.activeIndex === 2 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a>
-              <span>&nbsp;</span>
-              <a href="#">
-                <i className={`${this.state.activeIndex === 3 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a>
-              <span>&nbsp;</span>
-              <a href="#">
-                <i className={`${this.state.activeIndex === 4 ? 'fas fa-circle' : 'far fa-circle'}`}></i>
-              </a> */}
             </div>
           </div>
           <div className="col-third">
