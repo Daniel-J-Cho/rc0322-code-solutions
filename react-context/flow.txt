@@ -1,0 +1,94 @@
+• User can sign up
+  The user clicks the “Sign Up” button of the Navbar component of components/navbar.jsx
+  to change the hash fragment of the URL to “#sign-up”.  this.state.route of app.jsx
+  is assigned “sign-up” by passing “#sign-up” to the “parseRoute” function of
+  lib/parse-route.jsx where the “#” is replaced with a empty string in “#sign-up”.
+  The route property, along with the user property, of this.state is destructured
+  in the render method on line 58 of app.jsx.  Then it is assigned as part of an
+  object with several other properties to the variable const “contextValue” on line 60.
+  contextValue (and the object with all of its properties) is assigned as a value
+  to the AppContext component, on line 62 of app.jsx, via the "Provider" method
+  of the AppContext Context object, which is created with the “React.createContext”
+  method and imported from lib/app-context.js.  this.state.route is passed into
+  the “renderPage” method of the <PageContainer> component on line 66.  And in the
+  “renderPage” method on line 45, “path” is destructured from this.state.route
+  on line 46.  Since the condition on line 50 of “path === ‘sign-up’” is met when
+  the user clicks the “Sign Up” button, the <Auth /> component from /pages/auth.jsx
+  is returned.  The <Auth /> component is represented by the AuthPage class in
+  pages/auth.jsx.
+
+  In pages/auth.jsx, the values of contextValue of the AppContext Context object
+  are assigned to the contextType property of the AuthPage class on line 38
+  (AuthPage.contextType = AppContext;).  Then, on line 9 in the render method, the
+  values of this.state.route and this.state.user from app.jsx is destructured into
+  "route" and "user" and assigned the values from this.context, which accesses
+  the values from AppContext, which were assigned with the Provider method in app.jsx.
+  In the code block of the return statement on line 27, routh.path is assigned to
+  the "action" prop of the <AuthForm /> component, which is imported from
+  components/auth-form.jsx.
+
+  Within the render method on line 41 of components/auth-form.jsx, the “action”
+  prop passed in from pages/auth.jsx is destructured from this.props.  On the next
+  line, the “handleChange” and “handleSubmit” methods of the AuthForm class are
+  destructured from “this”.
+  The code block of the return statement is composed of a form element with one
+  input element for the username of this.state.username, another input element for
+  the password of this.state.password, and a button element of type "submit" whose
+  text content depends on the value of route.path, which is assigned to the “action”
+  prop that was passed in from pages/auth.jsx.  In this case, the text content would
+  display “Register” according to the ternary operator on lines 49-51.  The values
+  of the "name" property of the username and password inputs are “username” and
+  “password”, respectively.  Each have an “onChange” event handler and they are
+  assigned the “handleChange” method that was destructured from “this” on line 42.
+  “handleChange” accepts one argument of “event” and whenever the user types, each
+  keystroke is assigned as a value by assigning “event.target” and destructuring
+  the “name” property from each input and the “value” property of each keystroke itself
+  from each input.  The "name" property of each input element ("username" and "password")
+  are set to the state of each property of the same name of this.state on line 16.
+  When the submit button on line 85 is clicked, the “onSubmit” event handler of
+  the form element calls the “handleSubmit” method.
+
+  In the first line of the code block of the “handleSubmit” method, “event.preventDefault()”
+  is called to prevent the default action of the form submitting the form when the
+  button element with type “submit” on line 85 is clicked.  Next, the “action” prop
+  from pages/auth.jsx, which is assigned route.path from this.context is destructured
+  from this.props.  On the next line, the “req” object is assigned with the properties
+  of ‘method’ (assigned the value of “POST”), ‘headers’ (assigned the key/value
+  pair of ‘Content-Type’: ‘application/json’), and ‘body’, which is assigned the
+  value of ‘JSON.stringify(this.state)’ to convert the user-inputted values of
+  this.state.username and this.state.password (from the “handleChange” method) into
+  JSON strings.
+  Then a post ‘fetch’ call is made to server/index.js with the endpoint enclosed
+  in a template literal and the “action” variable/prop being passed in as a parameter,
+  which in this case is “sign-up”.
+
+  Once the POST fetch call with the “sign-up” parameter is made to server/index.js,
+  the endpoint matches with line 27 (‘/api/auth/sign-up’) of server/index.js.  The
+  this.state.username and this.state.password values are destructured from req.body
+  on line 28 and given to the newly created variables of “username” and “password”.
+  On the next line, there is a check to see if “username” and “password” exist;
+  and if they don’t, a “ClientError” (using server/client-error.js and server/error-middleware.js)
+  is thrown with the status code of 400 and an error message saying that ‘username
+  and password are required fields’.  Next, the argon2 dependency is used to hash
+  the user-inputted password and return a promise using said hashed password.
+  In the code block of the .then method, the ‘hashedPassword’ is passed in as an
+  argument, and a SQL insert statement is made inserting and assigning the values
+  of the “username” and “hashedPassword” variables to the categories of the same
+  names of the “users” table of the “reactContext” database.  This is done with
+  parameterized queries on the line 40, which are assigned to the const variable
+  of params.  The final line of the code block of this .then method returns the
+  results of the query from the database.
+  On the next line, another .then method is called; and the results from the database
+  query are assigned to “user” using array destructuring.  Then, a status code of
+  201 is sent back to components/auth-form.jsx with the “res.status” function; and
+  the “user” variable that was created with array destructuring is parsed into JSON
+  (using the "express.json() middleware) by chaining it to the “res.status(201)” function.
+  If there are any errors in the POST request (something wrong with the endpoint,
+  properties of req.body, etc.), the .catch method will catch any errors and send
+  a status code of 500 using the “next” object.
+
+  Back in components/auth-form.jsx, the ‘res’ object from server/index.js is sent
+  in as JSON using res.json().  The following .then method takes the result from
+  the database query from server/index.js and checks to if the “action” variable
+  matches “sign-up”; if it does, the hash property of the window.location interface
+  is changed to ‘sign-in’ and the user is taken to the sign-in page.
