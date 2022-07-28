@@ -91,4 +91,4 @@
   in as JSON using res.json().  The following .then method takes the result from
   the database query from server/index.js and checks to if the “action” variable
   matches “sign-up”; if it does, the hash property of the window.location interface
-  is changed to ‘sign-in’ and the user is taken to the sign-in page.
+  is changed to ‘sign-in’; and the user is taken to the sign-in page.
