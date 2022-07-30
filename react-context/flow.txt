@@ -1,19 +1,20 @@
 • User can sign up
-  The user clicks the “Sign Up” button of the Navbar component of components/navbar.jsx
-  to change the hash fragment of the URL to “#sign-up”.  this.state.route of app.jsx
-  is assigned “sign-up” by passing “#sign-up” to the “parseRoute” function of
-  lib/parse-route.jsx where the “#” is replaced with a empty string in “#sign-up”.
+
+  The user clicks the 'Sign Up' button of the Navbar component of components/navbar.jsx
+  to change the hash fragment of the URL to '#sign-up'.  this.state.route of app.jsx
+  is assigned 'sign-up' by passing '#sign-up' to the 'parseRoute' function of
+  lib/parse-route.jsx where the '#' is replaced with a empty string in '#sign-up'.
   The route property, along with the user property, of this.state is destructured
   in the render method on line 58 of app.jsx.  Then it is assigned as part of an
-  object with several other properties to the variable const “contextValue” on line 60.
+  object with several other properties to the variable const 'contextValue' on line 60.
   contextValue (and the object with all of its properties) is assigned as a value
-  to the AppContext component, on line 62 of app.jsx, via the "Provider" method
-  of the AppContext Context object, which is created with the “React.createContext”
+  to the AppContext component, on line 62 of app.jsx, via the 'Provider' method
+  of the AppContext Context object, which is created with the 'React.createContext'
   method and imported from lib/app-context.js.  this.state.route is passed into
-  the “renderPage” method of the <PageContainer> component on line 66.  And in the
-  “renderPage” method on line 45, “path” is destructured from this.state.route
-  on line 46.  Since the condition on line 50 of “path === ‘sign-up’” is met when
-  the user clicks the “Sign Up” button, the <Auth /> component from /pages/auth.jsx
+  the 'renderPage' method of the <PageContainer> component on line 66.  And in the
+  'renderPage' method on line 45, 'path' is destructured from this.state.route
+  on line 46.  Since the condition on line 50 of 'path === "sign-up"' is met when
+  the user clicks the 'Sign Up' button, the <Auth /> component from /pages/auth.jsx
   is returned.  The <Auth /> component is represented by the AuthPage class in
   pages/auth.jsx.
 
@@ -21,74 +22,180 @@
   are assigned to the contextType property of the AuthPage class on line 38
   (AuthPage.contextType = AppContext;).  Then, on line 9 in the render method, the
   values of this.state.route and this.state.user from app.jsx is destructured into
-  "route" and "user" and assigned the values from this.context, which accesses
+  'route' and 'user' and assigned the values from this.context, which accesses
   the values from AppContext, which were assigned with the Provider method in app.jsx.
   In the code block of the return statement on line 27, routh.path is assigned to
-  the "action" prop of the <AuthForm /> component, which is imported from
+  the 'action' prop of the <AuthForm /> component, which is imported from
   components/auth-form.jsx.
 
-  Within the render method on line 41 of components/auth-form.jsx, the “action”
+  Within the render method on line 41 of components/auth-form.jsx, the 'action'
   prop passed in from pages/auth.jsx is destructured from this.props.  On the next
-  line, the “handleChange” and “handleSubmit” methods of the AuthForm class are
-  destructured from “this”.
+  line, the 'handleChange' and 'handleSubmit' methods of the AuthForm class are
+  destructured from 'this'.
   The code block of the return statement is composed of a form element with one
   input element for the username of this.state.username, another input element for
-  the password of this.state.password, and a button element of type "submit" whose
-  text content depends on the value of route.path, which is assigned to the “action”
+  the password of this.state.password, and a button element of type 'submit' whose
+  text content depends on the value of route.path, which is assigned to the 'action'
   prop that was passed in from pages/auth.jsx.  In this case, the text content would
-  display “Register” according to the ternary operator on lines 49-51.  The values
-  of the "name" property of the username and password inputs are “username” and
-  “password”, respectively.  Each have an “onChange” event handler and they are
-  assigned the “handleChange” method that was destructured from “this” on line 42.
-  “handleChange” accepts one argument of “event” and whenever the user types, each
-  keystroke is assigned as a value by assigning “event.target” and destructuring
-  the “name” property from each input and the “value” property of each keystroke itself
-  from each input.  The "name" property of each input element ("username" and "password")
+  display 'Register' according to the ternary operator on lines 49-51.  The values
+  of the 'name' property of the username and password inputs are 'username' and
+  'password', respectively.  Each have an 'onChange' event handler and they are
+  assigned the 'handleChange' method that was destructured from 'this' on line 42.
+  'handleChange' accepts one argument of 'event' and whenever the user types, each
+  keystroke is assigned as a value by assigning 'event.target' and destructuring
+  the 'name' property from each input and the 'value' property of each keystroke itself
+  from each input.  The 'name' property of each input element ('username' and 'password')
   are set to the state of each property of the same name of this.state on line 16.
-  When the submit button on line 85 is clicked, the “onSubmit” event handler of
-  the form element calls the “handleSubmit” method.
+  When the submit button on line 85 is clicked, the 'onSubmit' event handler of
+  the form element calls the 'handleSubmit' method.
 
-  In the first line of the code block of the “handleSubmit” method, “event.preventDefault()”
-  is called to prevent the default action of the form submitting the form when the
-  button element with type “submit” on line 85 is clicked.  Next, the “action” prop
-  from pages/auth.jsx, which is assigned route.path from this.context is destructured
-  from this.props.  On the next line, the “req” object is assigned with the properties
-  of ‘method’ (assigned the value of “POST”), ‘headers’ (assigned the key/value
-  pair of ‘Content-Type’: ‘application/json’), and ‘body’, which is assigned the
-  value of ‘JSON.stringify(this.state)’ to convert the user-inputted values of
-  this.state.username and this.state.password (from the “handleChange” method) into
+  In the first line of the code block of the 'handleSubmit' method, 'event.preventDefault()'
+  is called to prevent the default action of submitting the form when the button
+  element with type 'submit' on line 85 is clicked.  Next, the 'action' prop
+  from pages/auth.jsx, which is assigned route.path from 'this.context', is destructured
+  from 'this.props'.  On the next line, the 'req' object is assigned with the properties
+  'method' (assigned the value of 'POST'), ‘headers’ (assigned the key/value pair
+  of '"Content-Type": "application/json"'), and 'body', which is assigned the value
+  of 'JSON.stringify(this.state)' to convert the user-inputted values of
+  this.state.username and this.state.password (from the 'handleChange' method) into
   JSON strings.
-  Then a post ‘fetch’ call is made to server/index.js with the endpoint enclosed
-  in a template literal and the “action” variable/prop being passed in as a parameter,
-  which in this case is “sign-up”.
+  Then a POST 'fetch' call is made to server/index.js with the endpoint enclosed
+  in a template literal and the 'action' variable/prop being passed in as a parameter,
+  which in this case is 'sign-up'.
 
-  Once the POST fetch call with the “sign-up” parameter is made to server/index.js,
-  the endpoint matches with line 27 (‘/api/auth/sign-up’) of server/index.js.  The
+  Once the POST fetch call with the 'sign-up' parameter is made to server/index.js,
+  the endpoint matches with line 27 ('/api/auth/sign-up') of server/index.js.  The
   this.state.username and this.state.password values are destructured from req.body
-  on line 28 and given to the newly created variables of “username” and “password”.
-  On the next line, there is a check to see if “username” and “password” exist;
-  and if they don’t, a “ClientError” (using server/client-error.js and server/error-middleware.js)
-  is thrown with the status code of 400 and an error message saying that ‘username
-  and password are required fields’.  Next, the argon2 dependency is used to hash
+  on line 28 and given to the newly created variables of 'username' and 'password'.
+  On the next line, there is a check to see if 'username' and 'password' exist;
+  and if they don’t, a 'ClientError' (using server/client-error.js and server/error-middleware.js)
+  is thrown with the status code of 400 and an error message saying that 'username
+  and password are required fields'.  Next, the argon2 dependency is used to hash
   the user-inputted password and return a promise using said hashed password.
-  In the code block of the .then method, the ‘hashedPassword’ is passed in as an
+  In the code block of the .then method, the 'hashedPassword' is passed in as an
   argument, and a SQL insert statement is made inserting and assigning the values
-  of the “username” and “hashedPassword” variables to the categories of the same
-  names of the “users” table of the “reactContext” database.  This is done with
+  of the 'username' and 'hashedPassword' variables to the categories of the same
+  names of the 'users' table of the 'reactContext' database.  This is done with
   parameterized queries on the line 40, which are assigned to the const variable
   of params.  The final line of the code block of this .then method returns the
   results of the query from the database.
   On the next line, another .then method is called; and the results from the database
-  query are assigned to “user” using array destructuring.  Then, a status code of
-  201 is sent back to components/auth-form.jsx with the “res.status” function; and
-  the “user” variable that was created with array destructuring is parsed into JSON
-  (using the "express.json() middleware) by chaining it to the “res.status(201)” function.
+  query are assigned to 'user' using array destructuring.  Then, a status code of
+  201 is sent back to components/auth-form.jsx with the 'res.status' function; and
+  the 'user' variable that was created with array destructuring is parsed into JSON
+  (using the 'express.json()' middleware) by chaining it to the 'res.status(201)' function.
   If there are any errors in the POST request (something wrong with the endpoint,
   properties of req.body, etc.), the .catch method will catch any errors and send
-  a status code of 500 using the “next” object.
+  a status code of 500 using the 'next' object.
 
-  Back in components/auth-form.jsx, the ‘res’ object from server/index.js is sent
+  Back in components/auth-form.jsx, the 'res' object from server/index.js is sent
   in as JSON using res.json().  The following .then method takes the result from
-  the database query from server/index.js and checks to if the “action” variable
-  matches “sign-up”; if it does, the hash property of the window.location interface
-  is changed to ‘sign-in’; and the user is taken to the sign-in page.
+  the database query from server/index.js and checks to if the 'action' variable
+  matches 'sign-up'; if it does, the hash property of the window.location interface
+  is changed to 'sign-in'; and the user is taken to the sign-in page.
+
+• User can sign in
+
+  The user can click the 'Sign In' button of the Navbar component in components/navbar.jsx
+  to bring up the sign-in screen with the '#sign-in' url hash.  The page initially
+  loads with the '#sign-in' url hash because the componentDidMount method of app.jsx
+  looks for the value of the token variable; and if no value is found, this.state.user
+  is set to null and this.state.isAuthorizing is set to 'false'.  If this.state.isAuthorizing
+  is set to 'false', all of the components in the return statement of app.jsx is
+  rendered.
+
+  If the user is registered, the user enters their username and password in the
+  their respective input elements of components/auth-form.jsx.  Each input element
+  has an 'onChange' event handler that calls the 'handleChange' method; and it is
+  triggered whenever the user begins typing in an input element.  The values of
+  'name' and 'value' are destructured from event.target on line 15.  The value of
+  the 'name' property can be either 'username' or 'password' depending on the input
+  element the user begins typing in. event.target.value, which is destructured to
+  'value', is assigned the characters the user types in an input element.
+  this.state.username and this.state.password are set on line 16 when the value
+  of 'name' is assigned either 'username' or 'password'; and their state values
+  are assigned the value of event.target.value.
+
+  When the user is finished typing in the input elements, the user clicks the
+  'Log In' button.  (Note: If the url hash was 'sign-up', the text content of the
+  'Log In' button would be 'Register').  Clicking this button triggers the 'onSubmit'
+  event handler of the enclosing form element; and this calls the 'handleSubmit'
+  method.
+  Lines 20-28 of 'handleSubmit' executes the same way as when the user registers
+  for an account; 'action' is destructured from this.props and is assigned the value
+  of this.state.routh.path from client/app.jsx and the 'req' object is assigned the
+  same properties and values.
+  Next, a POST fetch call is made to the back-end with a similar endpoint, but the
+  value of the 'action' property is 'sign-in'.
+  The endpoint passed into the app.use route method on Line 50 of server/index.js
+  matches the endpoint from the POST fetch call in components/auth-form.jsx that
+  has 'sign-in' as the value of the 'action' property/parameter.
+  Similar to the app.post route method when the user registers an account, the
+  values of this.state.username and this.state.password are destructured to
+  'username' and 'password' from req.body.  A 'ClientError' is thrown if no
+  'username' or 'password' is entered when the 'Log In' button is clicked.
+  A 'select' SQL statement is made that finds the values of the 'userId' and 'hashedPassword'
+  columns from the 'users' table of the reactContext database where the 'username'
+  column matches the username provided by the user in the input element from components/auth-form/jsx;
+  the value of this SQL statement is assigned to the const variable 'sql'.
+  The username provided by the user is assigned to the parameterized query named
+  'params' and the database is queried using 'db.query'.  The arguments passed into
+  db.query are the 'sql' and 'params' variables.  If the query is successful, the
+  promise of the .then method is fulfilled and the 'rows' array of the result object
+  from the query is assigned to an const variable named 'user', which is created with array
+  destructuring.
+  If the user doesn't exist, a 'ClientError' is thrown and a status code 401 along
+  with a 'invalid login' is sent back to the client in the 'res' object.
+  From the 'user' object, the 'userId' and 'hashedPassword' key/value pairs are
+  destructured.
+
+  As part of the argon2 package and the authentication process, .verify is used
+  to check if the value of the selected hashedPassword from the ‘users’ table matches
+  the password provided by the user.  The .verify method returns a promise and a
+  boolean.  If they don’t match and ‘false’ is returned, a ‘ClientError’ is thrown
+  with a status code 401 and an ‘invalid login’ message.  If they do match, an
+  object with the 'userId' and 'username' variables defined earlier in this route
+  method are assigned to a const variable named 'payload'.
+  Then, a JSON Web Token(jwt) is created holding the payload object and signed using
+  the value of the 'TOKEN_SECRET' key in .env.  The jwt is assigned to the variable
+  'token'.  The final line of the code block of the .then method takes an object
+  literal containing the token, a key/value pair with the user object as the key
+  and the payload object as the value; and this is sent back to the client
+  (components/auth-form.jsx) as a JSON res object.
+  Back in components/auth-form.jsx, once the promise on line 30 is resolved and
+  the JSON response is received via the res.json method, another .then with a
+  'result' argument representing the JSON response from the query is called;
+  and it first checks to see if the 'action' prop (routh.path) is strictly equal
+  to 'sign-up'.  Since the value of the 'action' is 'sign-in', it goes on to the
+  'else if' statement to check if the 'user' and the 'token' properties from the
+  result object exist.  If they do, then the 'handleSignIn' method that is assigned
+  to the 'onSignIn' prop, which is passed from the AuthPage class from pages/auth.jsx,
+  is called.  This takes us back to client/app.jsx where 'handleSignIn' is defined
+  beginning on line 34.
+  The 'handleSignIn' method accepts one parameter, the 'result' object from the
+  last resolved promise in 'handleSubmit' from components/auth-form.jsx.  First,
+  it destructures the user and token properties of the 'result' object and creates
+  variables of the same names.  Then it takes the value of the token variable and
+  assigns it to the key 'react-context-jwt' in localStorage.  Next, it sets the
+  state of this.state.user to the user object, which contains the 'userId' and
+  'username' from the query in server/index.js.
+  Since the value of this.state.user is not null and it exists, line 11 of
+  pages/auth.jsx returns the <Redirect> component from components/redirect.jsx and
+  passes an empty string value ('') to the 'to' prop.
+  In the 'Redirect' function of components/redirect.jsx, the current url (window.location)
+  is passed into a new URL constructor and assigned to a const variable named 'url'.
+  An 'if' statement is used to check if the value of the 'to' prop from line 11
+  of pages/auth.jsx is equal to an empty string.  If it is, then the hash property
+  of the url is assigned a value of '#'.  Then, on line 8, the current url is replaced with
+  the url with this new hash property.  The '#' from the hash property gets replaced
+  with an empty string ('') when the parseRoute function of lib/parse-route.jsx
+  is called in the componentDidMount lifecycle method in the anonymous function
+  of the event listener with the 'hashChange' event.  The value of this.state.route
+  gets assigned the empty string.
+  Line 47 of client/app.jsx uses an 'if' statement to check if this.state.route.path
+  is an empty string.  Because it is, the <Home /> component from pages/home.jsx is
+  returned.  The 'contextType' property of the <Home /> component is assigned the
+  values of AppContext.Provider from line 62 of client/app.jsx.  Since this.context.user
+  in the Home class is not null or falsy, the <div> element containing the gif
+  assigned to the 'src' attribute of the <iframe> element styled with the 'styles'
+  object defined on line 5 of pages/home.jsx is returned and displayed on the page.
