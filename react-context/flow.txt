@@ -1,7 +1,7 @@
-• User can sign up
+• User can sign up.
 
   The user clicks the 'Sign Up' button of the Navbar component of components/navbar.jsx
-  to change the hash fragment of the URL to '#sign-up'.  this.state.route of app.jsx
+  to change the hash fragment of the URL to '#sign-up'.  this.state.route of client/app.jsx
   is assigned 'sign-up' by passing '#sign-up' to the 'parseRoute' function of
   lib/parse-route.jsx where the '#' is replaced with a empty string in '#sign-up'.
   The route property, along with the user property, of this.state is destructured
@@ -14,16 +14,16 @@
   the 'renderPage' method of the <PageContainer> component on line 66.  And in the
   'renderPage' method on line 45, 'path' is destructured from this.state.route
   on line 46.  Since the condition on line 50 of 'path === "sign-up"' is met when
-  the user clicks the 'Sign Up' button, the <Auth /> component from /pages/auth.jsx
+  the user clicks the 'Sign Up' button, the <Auth /> component from pages/auth.jsx
   is returned.  The <Auth /> component is represented by the AuthPage class in
   pages/auth.jsx.
 
   In pages/auth.jsx, the values of contextValue of the AppContext Context object
   are assigned to the contextType property of the AuthPage class on line 38
   (AuthPage.contextType = AppContext;).  Then, on line 9 in the render method, the
-  values of this.state.route and this.state.user from app.jsx is destructured into
-  'route' and 'user' and assigned the values from this.context, which accesses
-  the values from AppContext, which were assigned with the Provider method in app.jsx.
+  values of this.state.route and this.state.user from client/app.jsx is destructured
+  into 'route' and 'user' and assigned the values from this.context, which accesses
+  the values from AppContext, which were assigned with the Provider method in client/app.jsx.
   In the code block of the return statement on line 27, routh.path is assigned to
   the 'action' prop of the <AuthForm /> component, which is imported from
   components/auth-form.jsx.
@@ -94,7 +94,7 @@
   matches 'sign-up'; if it does, the hash property of the window.location interface
   is changed to 'sign-in'; and the user is taken to the sign-in page.
 
-• User can sign in
+• User can sign in.
 
   The user can click the 'Sign In' button of the Navbar component in components/navbar.jsx
   to bring up the sign-in screen with the '#sign-in' url hash.  The page initially
@@ -191,7 +191,11 @@
   with an empty string ('') when the parseRoute function of lib/parse-route.jsx
   is called in the componentDidMount lifecycle method in the anonymous function
   of the event listener with the 'hashChange' event.  The value of this.state.route
-  gets assigned the empty string.
+  gets assigned the empty string. On line 29 of componentDidMount of client/app.jsx,
+  the value of the 'react-context-jwt' key from localStorage is assigned to a const
+  variable 'token'; and this token is decoded on the next line because the condition
+  of the ternary operator is true.  The decoded 'token' is assigned to the const
+  variable 'user' and set to this.state.user.
   Line 47 of client/app.jsx uses an 'if' statement to check if this.state.route.path
   is an empty string.  Because it is, the <Home /> component from pages/home.jsx is
   returned.  The 'contextType' property of the <Home /> component is assigned the
@@ -199,3 +203,54 @@
   in the Home class is not null or falsy, the <div> element containing the gif
   assigned to the 'src' attribute of the <iframe> element styled with the 'styles'
   object defined on line 5 of pages/home.jsx is returned and displayed on the page.
+
+• User can stay signed in (even if they refresh the page).
+
+  The user is able to stay signed in even when the page is refreshed because the
+  componentDidMount method lifecycle of client/app.jsx checks to see if there is
+  any change to the hash property with the 'hashChange' event that is passed in
+  to the event listener of the window interface.  Because there is no change to
+  the hash property when the user refreshes the page, the <Home /> component of
+  pages/home.jsx is returned with the 'renderPage' method on line 48 and rendered
+  on line 66 of the code block of the return statement of the render method.
+
+• User can sign out
+
+  When the user is signed in, the value of this.state.user is not null.  The value
+  of this.state.user is destructured from this.state in the render method of client/app.jsx
+  and assigned to the <AppContext /> Context object via its Provider component.
+  The 'handleSignOut' method is destructured from the 'this' object and assigned
+  to the <AppContext /> Context object in the same way as this.state.user.
+
+  In the Navbar class of components/navbar.jsx, the properties stored in the AppContext
+  Context object are assigned to the contextType property of the Navbar component
+  on line 39.
+  The value of this.state.user and the handleSignOut method are destructured from
+  this.context, which references the contextType property of the Navbar component
+  on line 6.  The variables created from the destructuring are named 'user' and
+  'handleSignOut', respectively.
+  Because 'user' is not null, the text content of the button is 'Sign out' and the
+  'onClick' event handler is assigned the 'handleSignOut' variable/method.
+
+  When the 'Sign out' button is clicked, the 'handleSignOut' method in client/app.jsx
+  is called and the value stored in the 'react-context-jwt' key of localStorage
+  is removed with the 'removeItem' method and the value of this.state.user is set
+  to null.
+
+  In the 'Home' class of pages/home.jsx, the value of this.state.user of client/app.jsx
+  is assigned to the contextType property of the <Home /> component via AppContext.Provider
+  on line 35.
+  Because the value of this.state.user is set to null when the user clicks the
+  'Sign out' button, the value of this.context.user in the Home class of pages/home.jsx
+  is also null.  An 'if' statement on line 20 of pages/home.jsx checks to see if
+  this.context.user is null or falsy; if it is, the return value is passing in
+  the value of 'sign-in' to the 'to' prop of the <Redirect /> component.
+
+  In components/redirect.jsx, if the 'to' prop that is passed in to the 'Redirect'
+  function is not an empty string, the code block of the 'else' statement on lines
+  5-7 sets the hash property of the url to the value of the 'to' prop that is passed
+  in, which in this case is 'sign-in'.  Line 8 replaces the url with this new hash
+  property; and the 'if' statement on line 50 of client/app.jsx returns the <Auth />
+  component.  The 'sign-in' page is rendered on line 66 of the render method of
+  client/app.jsx; and the user is subsequently signed out and the sign-in page
+  displays.
